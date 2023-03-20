@@ -92,7 +92,18 @@ for i in range(N):
     print()
 
 
+# 5. 두 정수 A와 B를 입력받아 A+B를 출력하는 프로그램 만들기.
 
+while True :
+    try:    
+        A =int(input("A값"))
+        B =int(input("B값"))
+        print(A+B)
+    except:
+        break
+    
+
+        
 
 
 
