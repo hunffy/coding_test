@@ -6,28 +6,35 @@ Created on Fri Mar 24 14:58:56 2023
 """
 
     
-# 1. 바구니 순서 바꾸기(슬라이싱)
+#1 바구니 순서바꾸기(슬라이싱)
 
-# # N, M = map(int,input("바구니갯수N과 셔플횟수M을 입력하세요").split())
-# N = 10
-# M = 5
-# N_list = []
-# for i in range(1,N+1) :
-#     N_list.append(i)
+"""
+    1. N = 바구니갯수와 번호는 동일하다 
+    2. M = 바꿀 횟수
+    3. i = 바꿀공 번호의 시작점
+    4. j = 바꿀공 번호의 끝점
+    5. k = 바꿀공 번호의 기준.
     
-# for i in range(1, M+1) : 
-#     i,j,k = list(map(int, input("i,j,k입력: ").split())) #1,6,4   
-#     print(N_list)
-#     temp_list = N_list[i-1:j]
-#     print(temp_list)
-#     print(temp_list[k-1:j] + N_list[j+1:])
-#     # N_list[i-1:j] = temp_list[k-1:j] + temp_list[i-1:k-1]
-#     print(N_list)
-#     print()
+    ex) N=5일때
+    N =[1,2,3,4,5]
+    i=1 j=4 k=3 일때
     
+    1부터 4까지 차례대로 맨뒤로 보내준다.
+    단, k가 기준이기때문에
+    1,2를 넘겨주다가 k=3인 지점에서 멈춰진다.
     
+    이때 숫자5는 고정시키고
+    i와 j의 범위인 1~4범위에서만 회전시킨뒤,
+    결과를 첨부해준다.
     
-#1-1
+    첫번째 [1,2,3,4,5]
+    2,3,4,1,(5)
+    
+    두번째 [2,3,4,1,5]
+    3,4,1,2,(5)
+    
+    k가 기준이기때문에 3,4,1,2,5가 결과가된다.
+"""
 
 N, M = map(int,input("N 과 M을 입력하세요.").split())
 
