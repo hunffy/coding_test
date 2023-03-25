@@ -41,3 +41,5 @@ for i in range(C):
     res=cnt/N*100
     print("과목평균: {:.3f}%".format(avg))
     print("평균초과 학생비율: {:.3f}%".format(res))
+    
+    
