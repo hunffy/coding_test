@@ -45,6 +45,26 @@ for i in range(1,N+1) :
 for i in range(1,M+1) :
     i,j,k = list(map(int, input("i,j,k는?").split())) # i:1 , j:6, k:4
     print(N_list)
+    print(N_list[:1])
     N_list = N_list[:i-1]+N_list[k-1:j]+N_list[i-1:k-1]+N_list[j:]   
     print(N_list)    
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
