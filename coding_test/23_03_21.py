@@ -2,7 +2,7 @@
 """
 Created on Tue Mar 21 12:24:59 2023
 
-2023_03_21
+2023_03_21 배열 문제.
 """
 
 import random
