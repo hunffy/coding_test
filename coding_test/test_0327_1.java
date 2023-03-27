@@ -13,7 +13,7 @@ ex) 3,3,6  => 1,000 + (3) x 100    = 1,300원
 ex) 1,3,6  => (6) x 100 = 600원
 
  */
-public class test_0326_3 {
+public class test_0327_1 {
     public static void main(String[] args){
         System.out.println("A,B,C를 입력하세요.");
         Scanner scan = new Scanner(System.in);
