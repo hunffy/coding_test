@@ -1,3 +1,4 @@
+package test_0327;
 import java.util.Scanner;
 
 /* 

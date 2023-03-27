@@ -1,8 +1,8 @@
-package test0317;
 
+package test_0317;
 import java.util.Scanner;
 
-public class test0317_2 {
+public class test_0317_2 {
     public static void main(String[] args){
     //1. 두 정수 A와 B가 주어졌을 때, A와 B를 비교하는 프로그램 작성해보기.
     /* 
