@@ -7,6 +7,9 @@ Created on Mon Mar 20 11:16:56 2023
 
 # 1. 숫자 N을 입력받아, 구구단 N단을 출력하는 프로그램 작성하기.
 
+"""
+
+"""
 N = int(input("숫자 N을 입력하세요."))
 for i in range(1,10) :
     print(N,"*",i,"=",(N*i))
