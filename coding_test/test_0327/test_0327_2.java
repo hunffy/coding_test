@@ -1,3 +1,4 @@
+package test_0327;
 import java.util.Scanner;
 
 /*  num값을 입력받아, 구구단 출력하기.
