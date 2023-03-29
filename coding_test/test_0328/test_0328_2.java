@@ -12,8 +12,6 @@ import java.util.Scanner;
 
 public class test_0328_2 {
     public static void main(String[] args){
-        int imax = 0;
-        int imin = 999999;
         System.out.print("정수의 갯수 N을 입력하세요.");
         Scanner scan = new Scanner(System.in);
         int N = scan.nextInt();
