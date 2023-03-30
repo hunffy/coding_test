@@ -13,10 +13,8 @@ public class test_0329_1 {
         Scanner scan = new Scanner(System.in);
         System.out.print("단어를 입력하세요.");
         String [] S = scan.next().split("");
-        System.out.print("몇번째 글자를 출력할까요?"); 
+        System.out.print("몇번째 글자를 출력할까요?");
         int I = scan.nextInt();
-
         System.out.print(S[I-1]);
     }
-    
 }
