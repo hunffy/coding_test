@@ -32,32 +32,39 @@ public class test_0403_1 {
 
     public static void main(String[] args){
        Scanner scan = new Scanner(System.in);
-       System.out.print("테스트 케이스 C를 입력해주세요.");
+
+       int [] scorelist; //점수 목록을 저장해줄 리스트.
+      
+       System.out.println("테스트 수를 입력하세요.");
        int C = scan.nextInt();
-       int score_list [];
+
+    
+    // 1.테스트 반복문
        for(int i=0; i<C; i++){
+        System.out.println(i+"번째");
+        System.out.println();
+
         System.out.println("학생수를 입력하세요.");
         int N = scan.nextInt();
-        score_list = new int[N];
-
-        double sum =0;
-
+        scorelist = new int[N];
+    // 학생수에 맞는 점수입력.
+        double sum = 0;
         for(int j=0; j<N; j++){
-            System.out.println("점수를 입력하세요.");
-            int score = scan.nextInt();
-            score_list[j] = score;
-            sum += score;
+            int score =scan.nextInt();
+            scorelist[j] =score;
+            sum += score; //학생들의 점수합.
         }
 
         double mean = (sum/N);
         double cnt = 0;
 
+    //각각의 점수가 평균보다 높은지 구분
         for(int k=0; k<N; k++){
-            if(score_list[k]>mean){
+            if(scorelist[k]>mean){  // 점수가 평균보다 높다면 cnt값 1 증가.
                 cnt++;
             }
         }
-        System.out.printf("평균보다 높은득점을 한 학생비율 :"+"%.3f%%\n",(cnt/N)*100);
+        System.out.printf("%.3f%%\n",(cnt/N)*100); // 평균보다 높은 점수를 보유한 학생의 비율을 소숫점3자리까지 표현.
        }
     }
 }
