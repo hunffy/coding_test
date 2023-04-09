@@ -8,8 +8,13 @@ import java.util.Scanner;
 public class test_0330_2 {
    public static void main(String[] args){
     Scanner scan = new Scanner(System.in);
-    System.out.print("문자를 입력해주세요");
+    System.out.println("테스트 수 T를 입력하세요.");
+    int T =scan.nextInt();
+    for(int i=0; i<T; i++){
+    System.out.println("문자를 입력해주세요");
     String [] S = scan.next().split("");
-    System.out.print("첫글자:"+S[0]+"마지막글자"+S[S.length-1]);
+    System.out.println("첫글자:"+S[0]+"마지막글자"+S[S.length-1]);
+    System.out.println();
+    }
    } 
 }
