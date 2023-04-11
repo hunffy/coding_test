@@ -19,14 +19,15 @@ public class test_0411_1 {
         int cnt = 0;
         int res = 0;
         System.out.print("A,B,V 값을 차례대로 입력해주세요.");
-        int A = scan.nextInt();
-        int B = scan.nextInt();
-        int V = scan.nextInt();
+        int A = scan.nextInt(); // 낮에 달팽이가 올라가는 높이.
+        int B = scan.nextInt(); // 밤에 달팽이가 미끄러지는 높이
+        int V = scan.nextInt(); // 나무막대의 높이
 
+        //while 문을 통해 res(달팽이가 현재올라간 높이)가 막대높이보다 낮다면 계속 반복되게 해주었다. 
         while(res<V){
-            res += A-B;
-            cnt++;
-            if(res+A>=V){
+            res += A-B; // 현재 올라간높이를  A-B씩 더해주었다.
+            cnt++;      // 최종걸린 일수를 cnt에 저장해주었다.
+            if(res+A>=V){ // 나무막대 정상에올라갔을때는 미끌어지지않기때문에 if문을통해 조건을 설정해주었다.
                 break;
             }
         }
