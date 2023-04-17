@@ -24,7 +24,6 @@ public class test_0415_2 {
         complet[N] =1;
        }
 
-       System.out.print(complet);
 
        for(int i=1; i<complet.length; i++){
         if(complet[i]!=1){
