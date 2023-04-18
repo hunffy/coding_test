@@ -12,13 +12,14 @@ import java.util.Scanner;
 public class test_0417_1 {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
-        HashSet<Integer> N_list = new HashSet<Integer>();
+        HashSet<Integer> N_set = new HashSet<Integer>();   // hashset은 중복을 허용하지않는다. 그리고 순서는정열되지않는다.
+                                                            // 이 문제에서는 순서는 상관없기때문에 hashset을 사용하였다.
 
-        for(int i=0; i<10; i++){
+        for(int i=0; i<10; i++){                            
             System.out.println("숫자를 입력하세요");
-            N_list.add(scan.nextInt()%42);
+            N_set.add(scan.nextInt()%42);  // N_set에 10개의 수를입력하고 입력과동시에 42로 나눈 나머지값을 바로 요소로 저장해준다. 
         }
-    
-    System.out.print(N_list.size());
+    System.out.println("");
+    System.out.print("결과 :"+N_set.size());       // 저장된 나머지값인 요소에서 중복된값들은 1개로 통일되고, 서로 각기다른 수들의 size() 즉 갯수를 출력하게된다.
     }
 }
