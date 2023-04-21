@@ -45,6 +45,7 @@ public class test_0415_1 {
                 N_list.set(c,k);
             }
         }
+        br.close();
         System.out.println(N_list);
     }
 }
