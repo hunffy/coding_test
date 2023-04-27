@@ -39,7 +39,7 @@ public class test_0426_1 {public static void main(String[] args) {
         int hap = 0;
 
         //숫자N에 해당하는 약수들을 N_list에 넣는구간
-        for (int i = 1; i <= N / 2; i++) { // i <= N / 2로 수정하여 연산 횟수 감소
+        for (int i = 1; i <= N / 2; i++) { // i의 범위는 N / 2 까지 본인을 제외해야하고, 약수는 약수/2 의 결과값보다 작거나 같기때문이다.
             if (N % i == 0) {
                 N_list[cnt] = i;
                 cnt++;
