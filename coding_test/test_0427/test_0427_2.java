@@ -41,17 +41,22 @@ public class test_0427_2 {
         int N = scan.nextInt();
         int hap = 0;
         int min = -1;
+        // M부터 N까지 반복문을통해 소수를찾는다.
         for(int i=M; i<=N; i++){
             if(isPrime(i)){
+                //i가 소수인경우 hap에 더해준다.
                 hap+=i;
+                // 소수가없는경우 또는 현재 수 i가 더 작으면 min값이 수정된다.
                 if(min == -1 || min > i){
                     min = i;
                 }
             }
         }
+        //소수가 없을경우 -1을 출력해준다.
         if(min==-1){
             System.out.println(min);
         }else{
+        //소수가 있는경우 합과 최솟값을 출력해준다.
         System.out.println(hap);
         System.out.println(min);
         }
