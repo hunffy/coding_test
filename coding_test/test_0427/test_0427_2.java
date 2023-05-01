@@ -57,8 +57,8 @@ public class test_0427_2 {
             System.out.println(min);
         }else{
         //소수가 있는경우 합과 최솟값을 출력해준다.
-        System.out.println(hap);
-        System.out.println(min);
+        System.out.println("소수들의 합: " + hap);
+        System.out.println("소수중 최솟값: " + min);
         }
     }
 }

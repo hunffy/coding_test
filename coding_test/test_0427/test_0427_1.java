@@ -56,6 +56,6 @@ public class test_0427_1 {
                 cnt++;
             }
         }
-        System.out.print(cnt);
+        System.out.print("갯수: " + cnt);
     }
 }
