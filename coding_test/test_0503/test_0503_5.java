@@ -32,15 +32,24 @@ public class test_0503_5 {
         arr[1] = scan.nextInt();
         arr[2] = scan.nextInt();
 
+        //0 , 0, 0 입력시 종료가된다.
         if(arr[0]==0&& arr[1]==0 && arr[2]==0){
             break;
         }
 
+        //최댓값을 구하는부분.
+        //max 초기값은 0 
+        // 0과 각요소들을 비교하여 max보다크면 그 요소가 최댓값이된다.
+        // 배열의 길이만큼 반복문을 반복하여 max에는 최댓값이 저장된다.
         for(int i=0; i<arr.length; i++){
             if(max<arr[i]){
                 max = arr[i];
             }
         }
+        // 조건문을통해 조건문에 해당하는 출력값이 출력된다.
+        // 주의할점은 위에서부터 조건문이 실행되므로
+        // Invalid조건문을 두번째에 위치해준다.
+        
         if (arr[0]==arr[1] && arr[1]==arr[2]){
             System.out.println("Equilateral");
         }else if(max>= arr[0]+arr[1] || max>= arr[1]+arr[2] ||max>= arr[0]+arr[2] ){
