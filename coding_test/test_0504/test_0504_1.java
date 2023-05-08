@@ -15,7 +15,7 @@
     출력)
     첫째 줄에 만들 수 있는 가장 큰 삼각형의 둘레를 출력한다.
  */
-package test0504;
+package test_0504;
 
 
 import java.util.ArrayList;
