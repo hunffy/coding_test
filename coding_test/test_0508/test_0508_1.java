@@ -31,7 +31,8 @@ public class test_0508_1 {
         System.out.print("n값을 입력하세요");
         int n = scan.nextInt();
 
-        System.out.print("1");
-        System.out.print("0");
+        //코드1은 어떤입력값을 가지던, 코드는1번만 실행된다.
+        System.out.print("1");// 코드1의 수행횟수
+        System.out.print("0");// 수행횟수는 1번만 되기때문에 최고차항의 차수는 0
     }
 }
