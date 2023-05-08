@@ -17,7 +17,7 @@ public class test_0413_2 {
 
         for(int i=0; i<DB.length; i++){
             if(DB[i].equals(id)){
-                System.out.print(id+"?!");
+                System.out.print(id+"??!");
                 return;
             }
         }

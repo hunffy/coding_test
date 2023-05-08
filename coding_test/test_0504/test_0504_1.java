@@ -19,23 +19,26 @@ package test0504;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
 public class test_0504_1 {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
-        
-        ArrayList <Integer> nlist = new ArrayList<>();
         System.out.println("3개의 각 변의 값을 입력해주세요.");
+
+        int a = scan.nextInt(); 
+        int b= scan.nextInt();
+        int c = scan.nextInt();
         
-        //리스트에 3개의 변의값을 입력해준다.
-        nlist.add(scan.nextInt());
-        nlist.add(scan.nextInt());
-        nlist.add(scan.nextInt());
+        ArrayList <Integer> nlist = new ArrayList<>(Arrays.asList(a,b,c));
+        
 
         // 임의로 입력된 값을 오름차순 정렬해준다.
-        nlist.sort(Comparator.naturalOrder());
+        Collections.sort(nlist);
 
         //2번째 3번째로 큰 변의값의 합이 가장큰변의합보다 클 경우 세변의 합을 그대로 더해 출력해준다.
         if(nlist.get(0)+nlist.get(1)>nlist.get(2)){
