@@ -1,85 +1,61 @@
 package test_0512;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
- 
+
 public class test_0512_1 {
- 
-	public static boolean[][] arr;
-	public static int min = 64;
- 
-	public static void main(String[] args) {
- 
-		Scanner in = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // 행과 열 입력
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+        scanner.nextLine(); // 개행 문자 제거
+
+        //체스판 생성
+        List<String> board = new ArrayList<>();
+
+        //체스판에 w,b입력
+        for (int i = 0; i < n; i++) {
+            board.add(scanner.nextLine());
+        }
+
+        //결과를 담을 리스트생성
+        List<Integer> result = new ArrayList<>();
         
-		int N = in.nextInt();
-		int M = in.nextInt();
- 
-		arr = new boolean[N][M];
-		
-        
-		// 배열 입력 
-		for (int i = 0; i < N; i++) {
-			String str = in.next();
-			
-			for (int j = 0; j < M; j++) {
-				if (str.charAt(j) == 'W') {
-					arr[i][j] = true;		// W일 때는 true 
-				} else {
-					arr[i][j] = false;		// B일 때는 false
-				}
- 
-			}
-		}
- 
-		
-		int N_row = N - 7;
-		int M_col = M - 7;
- 
-		for (int i = 0; i < N_row; i++) {
-			for (int j = 0; j < M_col; j++) {
-				find(i, j);
-			}
-		}
-		System.out.println(min);
-	}
- 
-	
-	public static void find(int x, int y) {
-		int end_x = x + 8;
-		int end_y = y + 8;
-		int count = 0;
- 
-		boolean TF = arr[x][y];	// 첫 번째 칸의 색 
- 
-		for (int i = x; i < end_x; i++) {
-			for (int j = y; j < end_y; j++) {
- 
-				// 올바른 색이 아닐경우 count 1 증가 
-				if (arr[i][j] != TF) {	
-					count++;
-				}
-				
-				/* 
-				 * 다음 칸은 색이 바뀌므로
-				 * true라면 false로, false 라면 true 로
-				 * 값을 변경한다.
-				 */
-				TF = (!TF);
-			}
-			
-			TF = !TF;
-		}
-		
-		/*
-		 *  첫 번째 칸을 기준으로 할 때의 색칠 할 개수(count)와
-		 *  첫 번째 칸의 색의 반대되는 색을 기준으로 할 때의
-		 *  색칠 할 개수(64 - count) 중 최솟값을 count 에 저장 
-		 */
-		count = Math.min(count, 64 - count);
-		
-		/*
-		 * 이전까지의 경우 중 최솟값보다 현재 count 값이
-		 * 더 작을 경우 최솟값을 갱신 
-		 */
-		min = Math.min(min, count);
-	}
+        for (int i = 0; i < n - 7; i++) {
+            for (int j = 0; j < m - 7; j++) {
+                int draw1 = 0;
+                int draw2 = 0;
+
+                for (int a = i; a < i + 8; a++) {
+                    for (int b = j; b < j + 8; b++) {
+                        if ((a + b) % 2 == 0) {
+                            if (board.get(a).charAt(b) != 'B') {
+                                draw1 += 1;
+                            }
+                            if (board.get(a).charAt(b) != 'W') {
+                                draw2 += 1;
+                            }
+                        } else {
+                            if (board.get(a).charAt(b) != 'W') {
+                                draw1 += 1;
+                            }
+                            if (board.get(a).charAt(b) != 'B') {
+                                draw2 += 1;
+                            }
+                        }
+                    }
+                }
+
+                result.add(draw1);
+                result.add(draw2);
+            }
+        }
+
+        int minCount = result.stream().min(Integer::compare).orElse(0);
+        System.out.println(minCount);
+
+        scanner.close();
+    }
 }
