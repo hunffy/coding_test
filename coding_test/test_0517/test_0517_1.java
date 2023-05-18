@@ -1,9 +1,3 @@
-package test_0517;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-
 /*  백준 2750번 문제풀이)
 
     N개의 수가 주어졌을 때, 이를 오름차순으로 정렬하는 프로그램을 작성하시오.
@@ -16,6 +10,12 @@ import java.util.Scanner;
     첫째 줄부터 N개의 줄에 오름차순으로 정렬한 결과를 한 줄에 하나씩 출력한다.
  * 
  */
+package test_0517;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class test_0517_1 {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
