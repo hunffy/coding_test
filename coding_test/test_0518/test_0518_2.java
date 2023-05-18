@@ -1,10 +1,5 @@
-package test_0518;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Scanner;
-
-/*  2022 연세대학교 미래캠퍼스 슬기로운 코딩생활에 
+/*  백준 25305번 문제풀이)
+    2022 연세대학교 미래캠퍼스 슬기로운 코딩생활에 
     N명의 학생들이 응시했다.
 
     이들 중 점수가 가장 높은 
@@ -20,6 +15,12 @@ import java.util.Scanner;
     상을 받는 커트라인을 출력하라.
  * 
  */
+package test_0518;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
 public class test_0518_2 {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
@@ -32,7 +33,11 @@ public class test_0518_2 {
             System.out.println("점수를 입력하세요");
             N_list[i]=scan.nextInt();
         }
+        //현재 오름차순상태.
+        //ex) N=5, k=2일때 50 60 70 80 90 이런식으로 정렬되어있다고치자.
         Arrays.sort(N_list);
+        //ex) N-K 5-2인 값 3 N_list[3]은 80이 나온다.
+        // 현재 오름차순정렬이기때문에  총 인원인 N에서 커트라인 수 K를 빼면 커트라인인 점수를 얻을수있다.
         System.out.print(N_list[N-k]);
     }
 }
