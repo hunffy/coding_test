@@ -28,6 +28,7 @@ public class test_0517_1 {
             N_list[i]=scan.nextInt();
         }
 
+        //오름차순 정렬 하는곳. arrays.sort(오름차순정렬)
         Arrays.sort(N_list);
 
         for(int i=0; i<N; i++){
