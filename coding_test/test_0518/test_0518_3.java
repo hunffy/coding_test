@@ -20,7 +20,10 @@ import java.util.Scanner;
 public class test_0518_3 {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
+        //Arrays.sort()를 사용하면 시간초과가 발생한다.
+        //StringBuilder를 통해 문자열들을 연결(?)해 줄것이다.
         StringBuilder sb = new StringBuilder();
+        
         System.out.println("숫자의 갯수 입력");
         int N = scan.nextInt();
         ArrayList <Integer> N_list = new ArrayList<>();
