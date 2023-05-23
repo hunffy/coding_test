@@ -36,13 +36,15 @@ public class test_0522_1 {
             member[i][1]=in.next();
         }
 
+        //Comparator 두개의 객체를 비교해준다. <객체의 타입을 지정해준다.>
         Arrays.sort(member, new Comparator<String[]>() {
             @Override
             public int compare(String[] s1, String[]s2){
+                //parsInt 문자를 숫자로 변환해준다.
                 return Integer.parseInt(s1[0])-Integer.parseInt(s2[0]);
             }
         });
-
+        System.out.println("");
         for(int i=0; i<N; i++){
             System.out.println(member[i][0]+" "+member[i][1]);
         }
