@@ -26,6 +26,8 @@ import java.util.StringTokenizer;
 public class test_0525_1 {
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        //문자열을 입력받아 토큰화해준다(분리), StringTokenizer(문자열,분리구분자,true/false);
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int N = Integer.parseInt(st.nextToken());
