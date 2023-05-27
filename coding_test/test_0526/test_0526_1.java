@@ -31,15 +31,24 @@ import java.util.StringTokenizer;
 public class test_0526_1 {
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("직원수 N을 입력하세요.");
         StringTokenizer st = new StringTokenizer(br.readLine());
+
+        // map(이름,상태)를 담을 map객체 생성
         HashMap <String,String> map = new HashMap<>();
         int N = Integer.parseInt(st.nextToken());
 
+        //N값에 따라 반복문실행. map객체에 이름과 상태를 저장해준다.
         for(int i=0; i<N; i++){
+            System.out.println("직원의 이름과 상태를 입력하세요");
             st = new StringTokenizer(br.readLine());
             map.put(st.nextToken(), st.nextToken());
         }
 
+        //나중에 역순으로 정렬해주기 위해 List를 생성하고,
+        //keySet()을 통해 map객체에 모든 key값에 접근할 수 있다.
+        // map객체에 해당 key의 value값이 enter라면 생성한 member 리스트에 추가해준다.
+        // 즉 member 리스트에는 현재 회사에 남아있는 직원들만 저장된다.
         ArrayList <String> member = new ArrayList<>();
         for(String name : map.keySet()){
             if(map.get(name).equals("enter")){
@@ -47,12 +56,15 @@ public class test_0526_1 {
             }
         }
 
+        //reverseOrder을 사용하여 리스의 값들을 역순으로 정렬해준다.
         Collections.sort(member,Collections.reverseOrder());
         StringBuilder sb = new StringBuilder();
-
+        
+        //마지막으로 출력을 해준다.
         for(String employee : member){
             sb.append(employee).append("\n");
         }
+        System.out.println("결과");
         System.out.print(sb);
     }
 }
