@@ -31,40 +31,36 @@ import java.util.StringTokenizer;
 public class test_0527_1 {
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("N값과 M값을 입력하세요");
+        System.out.println("N,M값 입력");
         StringTokenizer st = new StringTokenizer(br.readLine());
-        HashMap <String,Integer> poketmon = new HashMap<>();
 
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
-        int rank = 1;
-        //포켓몬도감 총 입력
-        for(int i=0; i<N; i++){
-            System.out.println("포켓몬 도감에 있는 모든 포켓몬 입력");
-            st = new StringTokenizer(br.readLine());
-            poketmon.put(st.nextToken(), rank);
-            rank++;
-        }
-        StringBuilder sb = new StringBuilder();
-        for(int i=0; i<M; i++){
-            System.out.println("찾을 포켓몬 검색");
-            st = new StringTokenizer(br.readLine());
-            String alp = st.nextToken();
+        HashMap <String,Integer> p_name = new HashMap<>();
+        HashMap <Integer,String> p_num = new HashMap<>();
 
-            //입력값이 숫자일 때 -> 포켓몬 이름이 출력되야함
-            if(Character.isDigit(alp.charAt(0))){
-                int number = Integer.parseInt(alp);
-                for(String key : poketmon.keySet()){
-                    if(poketmon.get(key)==number){
-                        sb.append(key).append("\n");
-                    }
-                }
-                //입력값이 문자일 때 -> 숫자가 출력되야함
+        //포켓몬 도감에 입력
+        for(int i=1; i<=N; i++){
+            System.out.println("도감입력");
+            String name = br.readLine();
+            p_name.put(name,i);
+            p_num.put(i,name);
+        }
+        System.out.println(" ");
+        StringBuilder sb = new StringBuilder();
+
+        for(int i=0; i<M; i++){
+            String input = br.readLine();
+
+            if(Character.isDigit(input.charAt(0))){
+                int number = Integer.parseInt(input);
+                sb.append(p_num.get(number)).append("\n");
             }else{
-                sb.append(poketmon.get(alp)).append("\n");
+                sb.append(p_name.get(input)).append("\n");
             }
         }
+        System.out.println(" ");
         System.out.print(sb);
     }
 }
