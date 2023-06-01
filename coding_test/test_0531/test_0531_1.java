@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 
 public class test_0531_1 {
-    public static void main(String[] args)throws IOException {
+    public static void main(String[] args)throws IOException,NullPointerException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("N값을 입력하세요.");
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -31,10 +31,17 @@ public class test_0531_1 {
         int N = Integer.parseInt(st.nextToken());
         HashMap <Integer,Integer> map = new HashMap <>();
 
+        System.out.println("카드의 숫자들을 입력하세요");
+        st = new StringTokenizer(br.readLine(), " ");
+
         for(int i=0; i<N; i++){
-            System.out.println("카드의 숫자들을 입력하세요");
-            st = new StringTokenizer(br.readLine());
             int input = Integer.parseInt(st.nextToken());
+             // getOrdefalult("키값",0) => 키값이 존재하면 키값에 해당하는 밸유값 리턴 , 없다면 0리턴
+            // 즉 입력값이 map객체에 없으면 +1증가 , 있으면 해당 밸유값에서 +1증가
+            //ex) input = 1 1 2 3 5 가 입력.
+            //   1번째) 1은 map객체에 존재x -> 0+1 =1.
+            //   2번째) 1은 map객체에 존재o -> 1의 밸유값 1리턴 -> 1+1 =2
+            //   3번째) 2는 map객체에 존재x -> 0+1 =1.
             map.put(input,map.getOrDefault(input, 0)+1);
         }
 
@@ -42,14 +49,20 @@ public class test_0531_1 {
         st = new StringTokenizer(br.readLine());
         int M = Integer.parseInt(st.nextToken());
         StringBuilder sb = new StringBuilder();
-
+        
+        System.out.println("카드 숫자를 입력하세요");
+        st = new StringTokenizer(br.readLine(), " ");
         for(int i=0; i<M; i++){
-            System.out.println("카드 숫자를 입력하세요");
-            st = new StringTokenizer(br.readLine());
             int input2 = Integer.parseInt(st.nextToken());
+            //map객체에 input2 키값이 존재하면 input2키값에 해당하는 밸유값리턴. 없다면 0 리턴
+            //ex) input2 = 1,2,7
+            // 1번째) map객체에 1은 존재 1의 value값 2를 리턴.
+            // 2번째) map객체에 2는 존재 2의 value값 1을 리턴
+            // 3번째) map객체에 7은 존재하지않음. 0으로 리턴.
             int res = map.getOrDefault(input2, 0);
             sb.append(res).append(" ");
         }
         System.out.print(sb);
-    }
+	}
 }
+
