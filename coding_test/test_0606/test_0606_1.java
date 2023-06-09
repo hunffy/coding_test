@@ -14,7 +14,6 @@
  */
 package test_0606;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -24,11 +23,13 @@ public class test_0606_1 {
         String S = in.next();
         HashSet <String> list = new HashSet<>();
 
+        //substring을 통해 s에 저장된 문자열을 나누어 list에 저장해주는 부분
         for(int i=0; i<S.length(); i++){
             for(int j=i+1; j<=S.length(); j++){
                 list.add(S.substring(i, j));
             }
         }
+        //나뉘어진 문자들의 갯수를 출력해주는 부분
         System.out.print(list.size());
     }
 }
