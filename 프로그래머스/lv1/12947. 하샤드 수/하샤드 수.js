@@ -1,15 +1,14 @@
 function solution(x) {
     var answer = true;
+    var nstring = x.toString();
     var sum = 0;
-    x = String(x);
-    
-    for(let i=0; i<x.length; i++){
-        sum+=parseInt(x.charAt(i));
+    for(let i=0; i<nstring.length; i++){
+        sum += parseInt(nstring[i]);
     }
-    if(x%sum!=0){
-        answer=false;
-    }else {
-        answer=true;
+    if(x%sum==0){
+        answer;
+    }else{
+        answer = false;
     }
     return answer;
 }
