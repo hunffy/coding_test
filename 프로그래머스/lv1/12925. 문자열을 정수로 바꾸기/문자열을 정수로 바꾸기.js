@@ -1,6 +1,6 @@
 function solution(s) {
     var answer = 0;
-    s = parseInt(s);
-    answer = s;
+    var S_number = parseInt(s);
+    answer = S_number;
     return answer;
 }
