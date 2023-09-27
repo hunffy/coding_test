@@ -1,18 +1,18 @@
 function solution(s){
     var answer = true;
-    var pcnt =0;
-    var ycnt =0;
+    var cnt_y = 0;
+    var cnt_p = 0;
     for(let i=0; i<s.length; i++){
-        if(s.charAt(i)=='p' || s.charAt(i)=='P'){
-            pcnt++;
-        }else if(s.charAt(i)=='y' || s.charAt(i)=='Y'){
-            ycnt++;
+        if(s[i]=='y' || s[i]=='Y'){
+            cnt_y++;
+        }else if(s[i]=='p' || s[i]=='P'){
+            cnt_p++;
         }
-        if(pcnt==ycnt){
-            answer = true;
-        }else {
-            answer = false;
-        }
+    }
+    if(cnt_y!=cnt_p){
+        answer = false;
+    }else{
+        answer;
     }
 
     return answer;
