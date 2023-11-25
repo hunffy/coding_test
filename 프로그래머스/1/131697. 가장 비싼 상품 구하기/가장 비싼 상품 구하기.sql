@@ -1,0 +1,2 @@
+-- MAX(컬럼) : 가장 큰 값
+SELECT MAX(PRICE) as MAX_PRICE FROM PRODUCT;
